@@ -1,0 +1,29 @@
+Ceci est la deuxieme version de la solution au test pratique.
+remarque sur le dataset:
+        hautement desequilibre (une classe qui domine largement l'autre au nombre d'observation)
+        contient des données numerique et categorique
+        contient des valeurs manquantes
+metric utilisé:
+        Classification Accuracy
+        matrice de confusion: car le dataset est tres desequilibre 
+Type d'algorithme: Random forest composé de 101 arbres
+__________________________________________________________________________________________________
+Description des fichiers:
+	data_cleaning.ipynb: 
+		suppression des features constantes
+        équilibrage du dataset par la methode du Over-Sampling càd: augmenter le nombre d'observation de la classe minoritaire
+		convertion des données categoriques en données numeriques
+		features selection
+		garder que les features les plus importantes (j'ai choisi de garder 4 features)
+        sauvegarder le nouveau dataset dans new_test.pkl et new_train.pkl
+	train_save.ipynb:
+        application de la validation croisée pour estimer la performance du modele
+        diviser le new_train dataset en ensemble d'apprentissage et ensemble de validation
+		apprentissage et validation
+        matrice de confusion
+        evaluation avec la auc metric
+		sauvegarde du model dans le fichier final_model.sav
+	inference.ipynb:
+		prediction de la probabilité clicked sur le test set
+		ajouter les predictions au fichier test
+		sauvegarder dans results.pkl
